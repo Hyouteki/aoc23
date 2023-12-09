@@ -2,4 +2,4 @@
 
 - [x] Day 1: Trebuchet?!
 - [x] Day 2: Cube Conundrum
-- [ ] Day 3: Gear Ratios 
+- [x] Day 3: Gear Ratios 
