@@ -29,7 +29,7 @@ fn parse_num(s: &mut String) -> i32 {
 
 fn main() {
     let mut content: Vec<String> = slurp_file();
-    let mut ans: i32 = 0;
+    let mut cards: Vec<i32> = vec![1; content.len()];
     for i in 0..content.len() {
         // eat 'Card '
         content[i] = content[i][5..].to_string();
@@ -45,15 +45,15 @@ fn main() {
         for _ in 0..10 {
             set.insert(parse_num(&mut content[i]));
         }
-        let mut x: i32 = 0;
+        let mut x: usize = 0;
         for _ in 0..25 {
             let num: i32 = parse_num(&mut content[i]);
-            if set.contains(&num) {
-                if x == 0 {x = 1;}
-                else {x <<= 1;}
-            }
+            if set.contains(&num) {x += 1};
         }
-        ans += x;
+        for j in i+1..i+1+x {
+            if cards.len() <= j {break;}
+            cards[j] += cards[i];
+        }
     }
-    println!("ans: {}", ans);
+    println!("ans: {}", cards.iter().sum::<i32>());
 }
