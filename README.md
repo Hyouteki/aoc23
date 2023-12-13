@@ -3,4 +3,4 @@
 - [x] Day 01: Trebuchet?!
 - [x] Day 02: Cube Conundrum
 - [x] Day 03: Gear Ratios 
-- [ ] Day 04: Scratchcards
+- [x] Day 04: Scratchcards
